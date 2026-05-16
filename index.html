@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASIR — Apuntes de Estudio</title>
+<link rel="stylesheet" href="./src/styles/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<nav id="sidebar">
+  <div class="sb-brand"><h1>ASIR · Apuntes</h1><p>Ciclo Formativo Grado Superior</p></div>
+  <div class="doc-tabs">
+    <div class="doc-tab act-c" id="tab-c" onclick="go('cloud')">☁ Cloud</div>
+    <div class="doc-tab" id="tab-h" onclick="go('hw')">⚙ Hardware</div>
+  </div>
+  <div class="nav-scroll">
+    <div class="nav-group on" id="ng-c">
+      <a class="nav-link" onclick="jump('cc01')">01 · Conceptos fundamentales</a>
+      <a class="nav-link" onclick="jump('cc02')">02 · Ventajas y migración</a>
+      <a class="nav-link" onclick="jump('cc03')">03 · Economía y facturación</a>
+      <a class="nav-link" onclick="jump('cc04')">04 · Regiones y zonas</a>
+      <a class="nav-link" onclick="jump('cc05')">05 · Seguridad</a>
+      <a class="nav-link" onclick="jump('cc06')">06 · Redes y CDN</a>
+      <a class="nav-link" onclick="jump('cc07')">07 · Servicios de cómputo</a>
+      <a class="nav-link" onclick="jump('cc08')">08 · Almacenamiento</a>
+      <a class="nav-link" onclick="jump('cc09')">09 · Bases de datos</a>
+      <a class="nav-link" onclick="jump('cc10')">10 · Arquitectura</a>
+      <a class="nav-link" onclick="jump('cc11')">11 · Escalado y monitorización</a>
+      <a class="nav-link" onclick="jump('ccgl')">Glosario</a>
+    </div>
+    <div class="nav-group" id="ng-h">
+      <a class="nav-link" onclick="jump('hw01')">T1 · Arquitectura de ordenadores</a>
+      <a class="nav-link" onclick="jump('hw02')">T2 · Instalación de software</a>
+      <a class="nav-link" onclick="jump('hw03')">T3 · Imágenes y respaldo</a>
+      <a class="nav-link" onclick="jump('hw04')">T4 · Implantación en CPD</a>
+      <a class="nav-link" onclick="jump('hwgl')">Glosario</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ════════ PAGE CLOUD ════════ -->
+<div class="page on" id="pg-cloud">
+<div class="dh cloud">
+  <div class="dh-tag">Módulo 1 · Cloud Computing - ASIR</div>
+  <h2>Computación en la Nube</h2>
+  <p>Resumen completo de conceptos clave para el examen</p>
+  <div class="chips">
+    <span class="chip cc">IaaS</span><span class="chip cc">PaaS</span><span class="chip cc">SaaS</span>
+    <span class="chip cc">Seguridad</span><span class="chip cc">Redes</span><span class="chip cc">Cómputo</span>
+    <span class="chip cc">Almacenamiento</span><span class="chip cc">BD</span><span class="chip cc">Arquitectura</span><span class="chip cc">Escalado</span>
+  </div>
+</div>
+
+<div class="sec" id="cc01">
+  <div class="sec-hd"><span class="sn c">01</span><div><h3>Conceptos Fundamentales de la Computación en la Nube</h3></div></div>
+  <div class="sub">
+    <p class="st c">Definición</p>
+    <div class="tw"><table><tbody>
+      <tr><td>Computación en la nube</td><td>Modelo de entrega de servicios informáticos que permite el acceso a recursos (servidores, almacenamiento, bases de datos, software, redes) a través de Internet, ofrecidos por proveedores como <strong>AWS</strong>, <strong>Microsoft Azure</strong> y <strong>Google Cloud Platform (GCP)</strong>.</td></tr>
+    </tbody></table></div>
+    <p class="st c" style="margin-top:.9rem">5 Características principales (NIST)</p>
+    <div class="tw"><table>
+      <thead><tr><th>Característica</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Servicio bajo demanda</td><td>Los usuarios acceden a recursos informáticos según sea necesario, sin inversión en infraestructura física.</td></tr>
+        <tr><td>Acceso ubicuo</td><td>Recursos accesibles desde cualquier dispositivo con conexión a Internet, desde cualquier lugar y momento.</td></tr>
+        <tr><td>Recursos compartidos (multitenancy)</td><td>La infraestructura se comparte entre múltiples usuarios, permitiendo una utilización eficiente.</td></tr>
+        <tr><td>Escalabilidad elástica</td><td>Los recursos se escalan hacia arriba o hacia abajo de forma rápida y automática según la demanda.</td></tr>
+        <tr><td>Servicio medido</td><td>El uso se mide y se factura. Los usuarios pagan solo por lo que consumen.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Modelos de Servicio: IaaS, PaaS, SaaS</p>
+    <div class="tw"><table>
+      <thead><tr><th>Modelo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>IaaS</td><td>Recursos físicos virtualizados: servidores, almacenamiento, redes. El cliente gestiona SO, middleware y aplicaciones. Máximo control. <strong>Ej:</strong> AWS EC2, Azure VMs, GCP Compute Engine.</td></tr>
+        <tr><td>PaaS</td><td>Plataforma completa para desarrollar y ejecutar aplicaciones. El cliente solo gestiona las aplicaciones. <strong>Ej:</strong> AWS Elastic Beanstalk, Azure App Service, GCP App Engine.</td></tr>
+        <tr><td>SaaS</td><td>Aplicaciones completas accesibles vía navegador. El cliente no gestiona nada de la infraestructura. <strong>Ej:</strong> Google Workspace, Microsoft 365, Salesforce, Dropbox.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip">Regla mnemotécnica: IaaS = edificio vacío (tú pones todo). PaaS = piso listo (tú pones los muebles). SaaS = hotel con todo incluido (solo lo usas).</div>
+  </div>
+  <div class="sub">
+    <p class="st c">Modelos de Implementación</p>
+    <div class="tw"><table>
+      <thead><tr><th>Modelo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Nube pública</td><td>Gestionada por proveedor externo. Accesible a todos. Alta escalabilidad. <strong>Ej:</strong> AWS, Azure, GCP.</td></tr>
+        <tr><td>Nube privada</td><td>Infraestructura dedicada a una sola organización. Mayor control y seguridad. Ideal para datos sensibles y regulados.</td></tr>
+        <tr><td>Nube híbrida</td><td>Combinación de nube pública y privada. Datos críticos en privada, cargas escalables en pública.</td></tr>
+        <tr><td>Multinube</td><td>Uso de múltiples proveedores de nube. Evita dependencia de un solo proveedor. Mayor complejidad de gestión.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="cc02">
+  <div class="sec-hd"><span class="sn c">02</span><div><h3>Ventajas, Desventajas y Migración a la Nube</h3></div></div>
+  <div class="sub">
+    <p class="st c">Ventajas</p>
+    <div class="tw"><table>
+      <thead><tr><th>Ventaja</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Reducción de costes</td><td>Modelo OpEx en lugar de CapEx. Se elimina la inversión en hardware y mantenimiento local.</td></tr>
+        <tr><td>Escalabilidad y flexibilidad</td><td>Escalar recursos en picos de demanda o reducirlos cuando baja. Sin necesidad de comprar hardware adicional.</td></tr>
+        <tr><td>Acceso ubicuo</td><td>Acceso desde cualquier dispositivo con Internet. Mejora la productividad y facilita el trabajo remoto.</td></tr>
+        <tr><td>Alta disponibilidad</td><td>Los datos y aplicaciones se replican en múltiples centros de datos. SLAs típicos del 99,9% o más.</td></tr>
+        <tr><td>Actualizaciones automáticas</td><td>El proveedor gestiona las actualizaciones de software, seguridad e infraestructura sin interrupción del servicio.</td></tr>
+        <tr><td>Colaboración mejorada</td><td>Equipos distribuidos pueden acceder y trabajar sobre los mismos datos en tiempo real.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Desventajas y Riesgos</p>
+    <div class="tw"><table>
+      <thead><tr><th>Riesgo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Seguridad y privacidad</td><td>Los datos en la nube son vulnerables a amenazas cibernéticas. Se requiere cifrado, MFA y configuración correcta de permisos.</td></tr>
+        <tr><td>Vendor lock-in</td><td>Dificultad para migrar a otro proveedor. Interrupciones del proveedor afectan al negocio. Cambios unilaterales de precios o políticas.</td></tr>
+        <tr><td>Conectividad</td><td>Sin Internet no hay acceso a los recursos. La velocidad y la latencia afectan el rendimiento.</td></tr>
+        <tr><td>Coste descontrolado</td><td>Sin monitoreo, los costes pueden dispararse. El modelo pay-per-use puede ser más caro que on-premise si no se optimiza.</td></tr>
+        <tr><td>Complejidad de migración</td><td>Migrar aplicaciones legadas puede ser complejo y costoso. Requiere planificación y conocimiento especializado.</td></tr>
+        <tr><td>Cumplimiento normativo</td><td>Algunos sectores tienen restricciones sobre dónde se almacenan los datos (GDPR, HIPAA).</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Proceso de Migración a la Nube (6 pasos)</p>
+    <div class="tw"><table>
+      <thead><tr><th>Paso</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>1. Evaluación de necesidades</td><td>Identificar las necesidades y requisitos de la empresa. Inventariar aplicaciones y datos actuales.</td></tr>
+        <tr><td>2. Selección del proveedor</td><td>Elegir el proveedor que mejor se adapte: seguridad, fiabilidad, escalabilidad, precio, soporte técnico.</td></tr>
+        <tr><td>3. Diseño de la arquitectura</td><td>Diseñar la arquitectura en la nube: servicios, recursos, redes, seguridad y recuperación.</td></tr>
+        <tr><td>4. Migración de datos</td><td>Mover datos a la nube garantizando seguridad, integridad y mínimo downtime.</td></tr>
+        <tr><td>5. Pruebas y validación</td><td>Probar la solución en la nube: rendimiento, seguridad, integración y funcionalidad.</td></tr>
+        <tr><td>6. Lanzamiento y gestión</td><td>Desplegar en producción y gestionar de forma continua: monitoreo, actualizaciones, optimización.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw"><table>
+      <thead><tr><th>Proveedor</th><th>Fortalezas principales</th></tr></thead>
+      <tbody>
+        <tr><td>AWS</td><td>Amplísima gama de servicios. Mayor cuota de mercado. Muy maduro. Documentación extensa.</td></tr>
+        <tr><td>Microsoft Azure</td><td>Fuerte integración con herramientas Microsoft (Office 365, Teams, Active Directory).</td></tr>
+        <tr><td>Google Cloud Platform</td><td>Líder en IA, ML y análisis de datos. BigQuery, TensorFlow. Muy competitivo en precios.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="cc03">
+  <div class="sec-hd"><span class="sn c">03</span><div><h3>Economía y Facturación en la Nube</h3></div></div>
+  <div class="sub">
+    <p class="st c">Modelos de Precios</p>
+    <div class="tw"><table>
+      <thead><tr><th>Modelo</th><th>Descripción y uso</th></tr></thead>
+      <tbody>
+        <tr><td>Pago por uso (on-demand)</td><td>Se paga solo por los recursos que se utilizan, por hora o por segundo. Máxima flexibilidad. Mayor precio unitario.</td></tr>
+        <tr><td>Instancias reservadas</td><td>Compromiso de uso durante 1 o 3 años a cambio de descuentos de hasta el 72%. Ideal para cargas de trabajo estables y predecibles.</td></tr>
+        <tr><td>Instancias spot/preemptible</td><td>Adquirir capacidad no utilizada a precios muy bajos (hasta 90% descuento). Pueden ser interrumpidas por el proveedor.</td></tr>
+        <tr><td>Descuentos por volumen</td><td>Reducciones de precio al superar determinados volúmenes de consumo. Acuerdos Enterprise para grandes organizaciones.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">TCO (Total Cost of Ownership)</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>TCO</td><td>Coste Total de Propiedad. Analiza TODOS los costes relacionados con la posesión de un activo: hardware, software, mantenimiento, personal, energía, espacio físico.</td></tr>
+        <tr><td>On-premise</td><td>CapEx elevado (compra hardware). Costes fijos independientemente del uso. Mantenimiento, actualizaciones y personal propios.</td></tr>
+        <tr><td>En la nube</td><td>OpEx (gasto operativo). Solo se paga por lo que se usa. El proveedor gestiona hardware, seguridad y actualizaciones.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Herramientas de Gestión de Costes</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Facturación consolidada</td><td>Gestionar múltiples cuentas y servicios desde una única plataforma. Informe centralizado de gastos y tendencias.</td></tr>
+        <tr><td>Monitorización de costes</td><td>Establecer presupuestos y monitorizar el gasto en tiempo real. Alertas cuando se acercan a los límites del presupuesto.</td></tr>
+        <tr><td>Análisis predictivo</td><td>IA y ML para estimar costes futuros. Identificar tendencias de gasto y optimizar el presupuesto.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">Las herramientas de gestión de costes (AWS Cost Explorer, Azure Cost Management, GCP Billing) son esenciales para evitar la factura sorpresa al final del mes.</div>
+  </div>
+</div>
+
+<div class="sec" id="cc04">
+  <div class="sec-hd"><span class="sn c">04</span><div><h3>Infraestructura de la Nube — Regiones y Zonas</h3></div></div>
+  <div class="sub">
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Centros de datos</td><td>Instalaciones físicas con servidores, almacenamiento y equipos de red. Ubicados estratégicamente en todo el mundo para garantizar baja latencia.</td></tr>
+        <tr><td>Regiones (Regions)</td><td>Agrupación geográfica de centros de datos. Ej: EU-West, US-East. Los datos se almacenan dentro de la región elegida (cumplimiento normativo).</td></tr>
+        <tr><td>Zonas de disponibilidad (AZ)</td><td>Centros de datos independientes dentro de una Región, con energía y red propias. Tolerancia a fallos a nivel de zona.</td></tr>
+        <tr><td>Redes de fibra óptica</td><td>Columna vertebral de la nube. Alto ancho de banda, baja latencia, alta fiabilidad.</td></tr>
+        <tr><td>Encriptación</td><td>Protección de datos durante la transmisión (TLS) y el almacenamiento (AES-256).</td></tr>
+        <tr><td>Control de acceso</td><td>Restricción del acceso según el rol del usuario (RBAC). IAM para gestión de permisos.</td></tr>
+        <tr><td>Redundancia</td><td>Múltiples servidores y centros de datos garantizan disponibilidad ante fallos de componentes individuales.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="cc05">
+  <div class="sec-hd"><span class="sn c">05</span><div><h3>Seguridad en la Nube</h3></div></div>
+  <div class="sub">
+    <p class="st c">Modelo de Responsabilidad Compartida</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Responsabilidad del PROVEEDOR</td><td>Seguridad de la infraestructura física (centros de datos, hardware, redes). SO subyacente. Hipervisores. Seguridad de la plataforma.</td></tr>
+        <tr><td>Responsabilidad del CLIENTE</td><td>Gestión de credenciales de acceso. Cifrado de datos. Configuración de seguridad de aplicaciones. Permisos y políticas de acceso.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Autenticación y Control de Acceso</p>
+    <div class="tw"><table>
+      <thead><tr><th>Mecanismo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>2FA / MFA</td><td>Combina algo que sabes (contraseña) + algo que tienes (código teléfono) + algo que eres (biometría). La capa de seguridad más importante en la nube.</td></tr>
+        <tr><td>RBAC</td><td>Permisos asignados según el rol del usuario en la organización. Solo acceden a lo necesario para su trabajo.</td></tr>
+        <tr><td>Federación de identidades / SSO</td><td>Permite que usuarios autenticados en un sistema accedan a otros sin nuevas credenciales. Facilita el Single Sign-On.</td></tr>
+        <tr><td>IAM</td><td>Gestión centralizada de identidades y permisos. Auditoría de accesos. Integración con sistemas de terceros.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">Principio de mínimo privilegio: cada usuario debe tener ÚNICAMENTE los permisos mínimos necesarios para realizar su trabajo.</div>
+  </div>
+  <div class="sub">
+    <p class="st c">Seguridad de los Datos</p>
+    <div class="tw"><table>
+      <thead><tr><th>Tipo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Cifrado en reposo</td><td>Los datos almacenados están cifrados. Protege contra accesos no autorizados. Algoritmo típico: AES-256.</td></tr>
+        <tr><td>Cifrado en tránsito</td><td>Los datos durante la transmisión están cifrados. Protocolo: TLS (HTTPS). Evita la interceptación man-in-the-middle.</td></tr>
+        <tr><td>Cifrado extremo a extremo</td><td>Solo el remitente y el destinatario pueden descifrar los datos. Máximo nivel de privacidad.</td></tr>
+        <tr><td>DLP</td><td>Data Loss Prevention. Detecta y bloquea la transferencia de datos confidenciales fuera de la red corporativa.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Cumplimiento Normativo</p>
+    <div class="tw"><table>
+      <thead><tr><th>Normativa</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>GDPR</td><td>Reglamento General de Protección de Datos. UE. Protege datos personales de ciudadanos europeos.</td></tr>
+        <tr><td>HIPAA</td><td>Health Insurance Portability and Accountability Act. EEUU. Protección de información sanitaria.</td></tr>
+        <tr><td>PCI DSS</td><td>Payment Card Industry Data Security Standard. Para cualquier empresa que procese pagos con tarjeta.</td></tr>
+        <tr><td>SOC 2</td><td>Service Organization Control 2. Estándar de seguridad para proveedores de servicios tecnológicos.</td></tr>
+        <tr><td>ISO 27001</td><td>Certificación internacional de gestión de seguridad de la información. Demuestra buenas prácticas.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="cc06">
+  <div class="sec-hd"><span class="sn c">06</span><div><h3>Redes y Entrega de Contenidos</h3></div></div>
+  <div class="sub">
+    <p class="st c">Tipos de Redes</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>LAN</td><td>Red de área local. Conecta dispositivos en un área geográfica limitada (oficina, hogar). Alta velocidad, baja latencia.</td></tr>
+        <tr><td>WAN</td><td>Red de área amplia. Conecta dispositivos a través de grandes distancias (ciudades, países). Internet es la WAN global.</td></tr>
+        <tr><td>MAN</td><td>Red de área metropolitana. Conecta dispositivos dentro de una ciudad o región. Ej: redes universitarias, hospitalarias.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Modelo OSI/TCP-IP — Capas de red</p>
+    <div class="tw"><table>
+      <thead><tr><th>Capa</th><th>Función y protocolos</th></tr></thead>
+      <tbody>
+        <tr><td>Capa 5 (Aplicación)</td><td>Permite que las aplicaciones accedan a la red. HTTP, FTP, SMTP, DNS.</td></tr>
+        <tr><td>Capa 4 (Transporte)</td><td>Transporte fiable y orientado a conexión. TCP (fiable), UDP (rápido).</td></tr>
+        <tr><td>Capa 3 (Red)</td><td>Enrutamiento de datos a través de la red. IP, routers.</td></tr>
+        <tr><td>Capa 2 (Enlace de datos)</td><td>Transmisión de datos en la red local. MAC, Ethernet, Wi-Fi.</td></tr>
+        <tr><td>Capa 1 (Física)</td><td>Especificaciones físicas: cableado, conectores, señales eléctricas/ópticas.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">VPC — Virtual Private Cloud</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>VPC</td><td>Entorno de computación en la nube aislado y dedicado a un solo usuario u organización. Políticas de seguridad y acceso propias.</td></tr>
+        <tr><td>Subredes</td><td>Segmentación de la VPC en redes menores. Subredes públicas (acceso Internet) y privadas (solo acceso interno).</td></tr>
+        <tr><td>Grupos de seguridad</td><td>Firewalls virtuales que controlan el tráfico entrante y saliente a nivel de instancia.</td></tr>
+        <tr><td>VPN</td><td>Conexión cifrada entre la VPC y la red corporativa on-premise. Extiende la red privada de la empresa a la nube.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Amenazas de Seguridad en Redes y CDN</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Ataques DDoS</td><td>Abruman los servidores con tráfico masivo para dejarlos fuera de servicio. Mitigación: CDN, balanceadores de carga, servicios anti-DDoS.</td></tr>
+        <tr><td>Inyección SQL</td><td>Explotan vulnerabilidades en bases de datos para ejecutar comandos maliciosos. Prevención: validación de entradas, prepared statements.</td></tr>
+        <tr><td>Phishing</td><td>Engaños para obtener credenciales confidenciales. Prevención: formación de usuarios, MFA.</td></tr>
+        <tr><td>Malware</td><td>Software malicioso que puede dañar sistemas. Prevención: antivirus, segmentación de red, mínimo privilegio.</td></tr>
+        <tr><td>CDN</td><td>Content Delivery Network. Almacena copias de contenido estático cerca de los usuarios. Reduce la latencia, mejora el rendimiento y también protege contra ataques DDoS.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="cc07">
+  <div class="sec-hd"><span class="sn c">07</span><div><h3>Servicios de Cómputo</h3></div></div>
+  <div class="sub">
+    <p class="st c">Máquinas Virtuales (VM)</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>VM</td><td>Copia virtual de un sistema operativo completo ejecutada dentro de un hipervisor. Cada VM funciona como una máquina independiente con su propio SO y aplicaciones.</td></tr>
+        <tr><td>Flexibilidad</td><td>Ejecutar diferentes SO y aplicaciones en la misma máquina física.</td></tr>
+        <tr><td>Escalabilidad</td><td>Agregar o eliminar VMs según la demanda de forma rápida.</td></tr>
+        <tr><td>Aislamiento</td><td>Una VM no puede afectar a otra aunque compartan el mismo hardware.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip">Optimización de costes en VMs: elegir el tamaño adecuado · apagar VMs inactivas · instancias reservadas (hasta 72% descuento) · escalado automático.</div>
+  </div>
+  <div class="sub">
+    <p class="st c">Contenedores (Docker / Kubernetes)</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Contenedor</td><td>Paquete que incluye una aplicación y todas sus dependencias en un entorno ejecutable ligero y portable. Comparte el kernel del SO del host (más ligero que una VM).</td></tr>
+        <tr><td>Docker</td><td>Plataforma para crear, distribuir y ejecutar contenedores. Estándar de facto para contenedores.</td></tr>
+        <tr><td>Kubernetes (K8s)</td><td>Sistema de orquestación de contenedores. Automatiza el despliegue, escalado y gestión de contenedores en producción.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Computación Serverless</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Serverless</td><td>El proveedor gestiona completamente la infraestructura. El desarrollador solo escribe funciones de código que se ejecutan en respuesta a eventos. No se gestionan ni se pagan servidores en reposo.</td></tr>
+        <tr><td>Escalabilidad automática</td><td>Se escala instantáneamente de 0 a millones de ejecuciones según la demanda.</td></tr>
+        <tr><td>Pago por uso real</td><td>Solo se paga por el tiempo de ejecución del código (milisegundos). Sin costes por capacidad inactiva.</td></tr>
+        <tr><td>Ejemplos</td><td>AWS Lambda · Azure Functions · Google Cloud Functions</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="cc08">
+  <div class="sec-hd"><span class="sn c">08</span><div><h3>Servicios de Almacenamiento</h3></div></div>
+  <div class="sub">
+    <div class="tw"><table>
+      <thead><tr><th>Tipo</th><th>Descripción y casos de uso</th></tr></thead>
+      <tbody>
+        <tr><td>Bloques</td><td>Organizado en bloques de tamaño fijo. Alto rendimiento y consistencia. Para SO, BD y aplicaciones que requieren acceso rápido. <strong>Ej:</strong> AWS EBS, Azure Managed Disks.</td></tr>
+        <tr><td>Objetos</td><td>Datos como objetos con URL única, metadatos y contenido. Altamente escalable, económico. Para archivos multimedia, backups, datos web estáticos. <strong>Ej:</strong> AWS S3, Azure Blob Storage, GCP Cloud Storage.</td></tr>
+        <tr><td>Ficheros</td><td>Estructura jerárquica de archivos y carpetas. Fácil acceso, colaboración y control de versiones. <strong>Ej:</strong> AWS EFS, Azure Files, GCP Filestore.</td></tr>
+        <tr><td>Archivado</td><td>Almacenamiento de bajo coste para datos de acceso infrecuente. Para cumplimiento legal, registros históricos. <strong>Ej:</strong> AWS Glacier, Azure Archive Storage.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">Elección de almacenamiento: alto rendimiento para BD → bloques. Muchos archivos grandes o estáticos → objetos. Compartir documentos en equipo → ficheros. Datos raramente usados → archivado.</div>
+    <div class="tw"><table>
+      <thead><tr><th>Criterio</th><th>Bloques</th><th>Ficheros</th><th>Objetos</th><th>Archivado</th></tr></thead>
+      <tbody>
+        <tr><td>Rendimiento</td><td>Alto</td><td>Medio</td><td>Bajo</td><td>Muy bajo</td></tr>
+        <tr><td>Coste</td><td>Alto</td><td>Medio</td><td>Bajo</td><td>Mínimo</td></tr>
+        <tr><td>Escalabilidad</td><td>Limitada</td><td>Media</td><td>Masiva</td><td>Masiva</td></tr>
+        <tr><td>Acceso</td><td>Directo (SO)</td><td>Compartido en red</td><td>Vía API/URL</td><td>Vía API</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="cc09">
+  <div class="sec-hd"><span class="sn c">09</span><div><h3>Servicios de Bases de Datos</h3></div></div>
+  <div class="sub">
+    <p class="st c">Bases de Datos Relacionales (SQL) — Propiedades ACID</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Atomicidad</td><td>La transacción es indivisible: todo se ejecuta o nada.</td></tr>
+        <tr><td>Consistencia</td><td>La BD pasa de un estado válido a otro estado válido.</td></tr>
+        <tr><td>Aislamiento</td><td>Las transacciones concurrentes no se interfieren entre sí.</td></tr>
+        <tr><td>Durabilidad</td><td>Los cambios confirmados (COMMIT) son permanentes.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip">Proveedores SQL: Oracle · MySQL · PostgreSQL · SQL Server · Amazon Aurora · Google Cloud SQL · Azure SQL Database</div>
+  </div>
+  <div class="sub">
+    <p class="st c">Bases de Datos NoSQL — Tipos</p>
+    <div class="tw"><table>
+      <thead><tr><th>Tipo</th><th>Descripción y proveedores</th></tr></thead>
+      <tbody>
+        <tr><td>Clave-Valor</td><td>Pares clave:valor. La más simple. Ideal para caché, sesiones. <strong>Redis, DynamoDB, Memcached.</strong></td></tr>
+        <tr><td>Documentos</td><td>Datos en documentos JSON/BSON. Flexible para aplicaciones web y móviles. <strong>MongoDB, CouchDB, Amazon DocumentDB.</strong></td></tr>
+        <tr><td>Columna ancha</td><td>Datos en columnas. Para grandes volúmenes de series temporales y datos analíticos. <strong>Cassandra, HBase, Google Bigtable.</strong></td></tr>
+        <tr><td>Grafos</td><td>Datos como nodos y aristas. Para relaciones complejas. Redes sociales, recomendaciones. <strong>Neo4j, Amazon Neptune.</strong></td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw"><table>
+      <thead><tr><th>Criterio</th><th>SQL</th><th>NoSQL</th></tr></thead>
+      <tbody>
+        <tr><td>Esquema</td><td>Fijo y rígido</td><td>Flexible o sin esquema</td></tr>
+        <tr><td>Escalado</td><td>Vertical (más potente el servidor)</td><td>Horizontal (más servidores)</td></tr>
+        <tr><td>Transacciones</td><td>ACID completo</td><td>A menudo BASE</td></tr>
+        <tr><td>Consultas</td><td>SQL estándar y potente</td><td>APIs propias, consultas más simples</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Bases de Datos Analíticas (OLAP)</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Descripción</td><td>Diseñadas para el análisis de grandes cantidades de datos históricos. Optimizadas para consultas complejas y lectura masiva. Usadas en Business Intelligence y Data Warehousing.</td></tr>
+        <tr><td>Ejemplos</td><td>Amazon Redshift · Google BigQuery · Azure Synapse Analytics · Snowflake</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="cc10">
+  <div class="sec-hd"><span class="sn c">10</span><div><h3>Arquitectura en la Nube</h3></div></div>
+  <div class="sub">
+    <p class="st c">Los 5 Pilares del Well-Architected Framework</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Excelencia operacional</td><td>Automatizar tareas repetitivas. Monitoreo continuo. Gestión controlada de cambios con pruebas previas.</td></tr>
+        <tr><td>Seguridad</td><td>Cifrado en reposo y en tránsito. Firewalls e IDS/IPS. RBAC y principio de mínimo privilegio.</td></tr>
+        <tr><td>Fiabilidad</td><td>Redundancia de componentes críticos. Estrategias de backup y recuperación de desastres. Supervisión constante.</td></tr>
+        <tr><td>Eficiencia en el rendimiento</td><td>Optimización del código. Balanceo de carga. Almacenamiento rápido (SSD/NVMe). Tecnologías de caché.</td></tr>
+        <tr><td>Optimización de costes</td><td>Elegir los servicios adecuados. Escalar según la demanda. Monitorear el uso de recursos con herramientas de análisis.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Patrones Arquitectónicos y Herramientas</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Microservicios</td><td>Dividir la aplicación en servicios pequeños e independientes. Mayor agilidad, escalabilidad y resiliencia.</td></tr>
+        <tr><td>Serverless</td><td>Funciones como servicio activadas por eventos. Sin gestión de infraestructura. Escalado automático a cero.</td></tr>
+        <tr><td>Arquitecturas basadas en eventos</td><td>Los componentes se comunican mediante eventos asíncronos. Muy desacoplado y escalable.</td></tr>
+        <tr><td>Arquitectura de capas (N-tier)</td><td>Separar presentación, lógica de negocio y datos en capas distintas. Clásica para aplicaciones web.</td></tr>
+        <tr><td>Kubernetes</td><td>Orquestación de contenedores. Automatiza despliegue, escalado y gestión de aplicaciones en la nube.</td></tr>
+        <tr><td>Terraform</td><td>Infraestructura como código (IaC). Define y provisiona infraestructura cloud de forma declarativa y reproducible.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="cc11">
+  <div class="sec-hd"><span class="sn c">11</span><div><h3>Escalado Automático y Monitorización</h3></div></div>
+  <div class="sub">
+    <p class="st c">Escalado Horizontal vs Vertical</p>
+    <div class="tw"><table>
+      <thead><tr><th>Tipo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Horizontal (scale out/in)</td><td>Agregar más servidores/instancias a la infraestructura. Distribuye la carga entre múltiples nodos. Más tolerante a fallos. Ideal en la nube. Los balanceadores de carga distribuyen el tráfico.</td></tr>
+        <tr><td>Vertical (scale up/down)</td><td>Aumentar la capacidad del servidor existente (más CPU, RAM, disco). Más sencillo. Limitado por el hardware máximo disponible. Requiere reinicio del servidor.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Balanceadores de Carga — Estrategias</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Round Robin</td><td>Las solicitudes se distribuyen a los servidores en un orden cíclico. Simple e igualitario.</td></tr>
+        <tr><td>Least Connections</td><td>Las solicitudes se dirigen al servidor con menos conexiones activas. Más inteligente que Round Robin.</td></tr>
+        <tr><td>Random</td><td>Distribución aleatoria. Simple pero menos eficiente.</td></tr>
+        <tr><td>Sticky Sessions</td><td>Las solicitudes de un mismo usuario se dirigen siempre al mismo servidor (para mantener la sesión).</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st c">Métricas Clave y Servicios de Monitorización</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Uso de CPU</td><td>Porcentaje de utilización de los procesadores. Alertas cuando supera el 80-90%.</td></tr>
+        <tr><td>Consumo de memoria (RAM)</td><td>Uso de memoria. Detectar memory leaks y sobredimensionamiento.</td></tr>
+        <tr><td>Tráfico de red</td><td>Volumen de datos entrantes/salientes. Detectar picos de tráfico y posibles ataques DDoS.</td></tr>
+        <tr><td>Tasa de errores</td><td>Porcentaje de peticiones que resultan en error (4xx, 5xx). Indica problemas en la aplicación.</td></tr>
+        <tr><td>Latencia</td><td>Tiempo que tarda la aplicación en responder. Fundamental para la experiencia del usuario.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>AWS</td><td>Amazon CloudWatch. Métricas, logs, alertas y dashboards. Integrado con todos los servicios AWS.</td></tr>
+        <tr><td>Azure</td><td>Azure Monitor + Application Insights. Monitorización de infraestructura y aplicaciones.</td></tr>
+        <tr><td>Google Cloud</td><td>Cloud Monitoring (Stackdriver). Métricas, logs y trazas distribuidas.</td></tr>
+        <tr><td>Open source</td><td>Prometheus + Grafana. Muy popular para infraestructuras Kubernetes.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">Configurar alertas para las 4 señales doradas: latencia, tráfico, errores y saturación.</div>
+  </div>
+</div>
+
+<div class="sec" id="ccgl">
+  <div class="sec-hd"><span class="sn c">GL</span><div><h3>Glosario — Cloud Computing</h3></div></div>
+  <div class="gl">
+    <div class="gi"><div class="gt c">Alta disponibilidad</div><div class="gd">Diseño del sistema que garantiza que los servicios estén operativos la mayor parte del tiempo (ej: 99,9% uptime).</div></div>
+    <div class="gi"><div class="gt c">AWS</div><div class="gd">Amazon Web Services. Proveedor líder de servicios en la nube.</div></div>
+    <div class="gi"><div class="gt c">Azure</div><div class="gd">Plataforma de computación en la nube de Microsoft.</div></div>
+    <div class="gi"><div class="gt c">Backup</div><div class="gd">Copia de seguridad de datos para recuperación ante fallos o desastres.</div></div>
+    <div class="gi"><div class="gt c">CapEx vs OpEx</div><div class="gd">CapEx: gasto de capital (compra hardware). OpEx: gasto operativo (pago por uso en la nube).</div></div>
+    <div class="gi"><div class="gt c">CDN</div><div class="gd">Content Delivery Network. Red de servidores que entrega contenido desde el servidor más cercano al usuario.</div></div>
+    <div class="gi"><div class="gt c">Contenedor</div><div class="gd">Paquete ligero y portable que incluye una aplicación y sus dependencias. Tecnología: Docker, Kubernetes.</div></div>
+    <div class="gi"><div class="gt c">GCP</div><div class="gd">Google Cloud Platform. Plataforma de nube de Google.</div></div>
+    <div class="gi"><div class="gt c">GDPR</div><div class="gd">Reglamento General de Protección de Datos. Marco legal europeo para la privacidad de datos.</div></div>
+    <div class="gi"><div class="gt c">Hipervisor</div><div class="gd">Software que gestiona las máquinas virtuales sobre el hardware físico.</div></div>
+    <div class="gi"><div class="gt c">IaaS</div><div class="gd">Infrastructure as a Service. El proveedor ofrece infraestructura virtualizada.</div></div>
+    <div class="gi"><div class="gt c">IAM</div><div class="gd">Identity and Access Management. Gestión centralizada de identidades y permisos.</div></div>
+    <div class="gi"><div class="gt c">Kubernetes (K8s)</div><div class="gd">Sistema de orquestación de contenedores para despliegue y escalado automático.</div></div>
+    <div class="gi"><div class="gt c">Latencia</div><div class="gd">Tiempo que tarda un paquete en ir desde el origen al destino. A menor latencia, mejor rendimiento.</div></div>
+    <div class="gi"><div class="gt c">MFA</div><div class="gd">Multi-Factor Authentication. Autenticación con 2 o más factores.</div></div>
+    <div class="gi"><div class="gt c">Microservicios</div><div class="gd">Arquitectura donde una aplicación se divide en servicios pequeños e independientes.</div></div>
+    <div class="gi"><div class="gt c">Nube híbrida</div><div class="gd">Combinación de nube pública y privada para aprovechar ventajas de ambas.</div></div>
+    <div class="gi"><div class="gt c">PaaS</div><div class="gd">Platform as a Service. Plataforma completa para desarrollo y despliegue de aplicaciones.</div></div>
+    <div class="gi"><div class="gt c">RBAC</div><div class="gd">Role-Based Access Control. Control de acceso basado en roles del usuario.</div></div>
+    <div class="gi"><div class="gt c">SaaS</div><div class="gd">Software as a Service. Aplicaciones completas accesibles vía navegador.</div></div>
+    <div class="gi"><div class="gt c">Serverless</div><div class="gd">Modelo sin gestión de servidores. El código se ejecuta en respuesta a eventos. Pago por ejecución.</div></div>
+    <div class="gi"><div class="gt c">SSO</div><div class="gd">Single Sign-On. Autenticación única que da acceso a múltiples sistemas.</div></div>
+    <div class="gi"><div class="gt c">TCO</div><div class="gd">Total Cost of Ownership. Coste total de posesión de un activo incluido hardware, personal, energía.</div></div>
+    <div class="gi"><div class="gt c">Vendor lock-in</div><div class="gd">Dependencia excesiva de un proveedor que dificulta el cambio a otro.</div></div>
+    <div class="gi"><div class="gt c">VPC</div><div class="gd">Virtual Private Cloud. Entorno de nube aislado y dedicado a una sola organización.</div></div>
+  </div>
+</div>
+</div><!-- /pg-cloud -->
+
+
+<!-- ════════ PAGE HARDWARE ════════ -->
+<div class="page" id="pg-hw">
+<div class="dh hw">
+  <div class="dh-tag">Módulo 2 · Fundamentos de Hardware - ASIR · Temas 1 a 4</div>
+  <h2>Fundamentos de Hardware</h2>
+  <p>Resumen completo de conceptos clave — Arquitectura, Software, Imágenes, CPD</p>
+  <div class="chips">
+    <span class="chip hc">Von Neumann</span><span class="chip hc">Arquitectura</span>
+    <span class="chip hc">Software</span><span class="chip hc">Imágenes</span>
+    <span class="chip hc">RAID</span><span class="chip hc">CPD</span><span class="chip hc">Riesgos Laborales</span>
+  </div>
+</div>
+
+<div class="sec" id="hw01">
+  <div class="sec-hd"><span class="sn h">T1</span><div><h3>Arquitectura de Ordenadores</h3><h4>Configuración de equipos y periféricos</h4></div></div>
+  <div class="sub">
+    <p class="st h">1. Modelo Von Neumann</p>
+    <div class="tw"><table>
+      <thead><tr><th>Componente</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Von Neumann (1945)</td><td>Modelo lógico: CPU y memoria se comunican por un bus de datos compartido. Datos y programas se almacenan en la misma memoria. Base de la mayoría de ordenadores modernos.</td></tr>
+        <tr><td>CPU</td><td>Cerebro del ordenador. Ejecuta instrucciones. Compuesta por UC (Unidad de Control) + ALU (Unidad Aritmético-Lógica).</td></tr>
+        <tr><td>UC (Unidad de Control)</td><td>Coordina las operaciones. Busca instrucciones en memoria, las decodifica y envía señales a la ALU y demás componentes.</td></tr>
+        <tr><td>ALU (Unidad Aritmético-Lógica)</td><td>Realiza operaciones matemáticas (suma, resta, mult., división) y lógicas (AND, OR, NOT) sobre los datos.</td></tr>
+        <tr><td>Memoria RAM</td><td>Memoria volátil de acceso rápido. Almacena datos y programas en uso. Se borra al apagar. Se mide en GB.</td></tr>
+        <tr><td>Memoria ROM</td><td>No volátil. Almacena datos permanentes como el firmware (BIOS).</td></tr>
+        <tr><td>Dispositivos E/S</td><td>Permiten interacción: teclado, ratón, pantalla, impresora.</td></tr>
+        <tr><td>Bus de datos</td><td>Conjunto de cables que conectan CPU, memoria y E/S. Transfiere datos y señales de control.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">2. Buses e Interfaces de Almacenamiento</p>
+    <div class="tw"><table>
+      <thead><tr><th>Bus</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>FSB (Front Side Bus)</td><td>Bus principal CPU-RAM-Chipset. Arquitecturas Intel y AMD antiguas.</td></tr>
+        <tr><td>QPI (QuickPath Interconnect)</td><td>Bus Intel moderno. Sustituyó al FSB.</td></tr>
+        <tr><td>HyperTransport (HT)</td><td>Bus AMD. Conecta CPU con RAM, chipset y E/S.</td></tr>
+        <tr><td>PCI-Express (PCIe)</td><td>Bus de alta velocidad para GPU, SSD NVMe, tarjetas de expansión. Variantes: x1, x4, x8, x16.</td></tr>
+        <tr><td>USB</td><td>Conecta periféricos. Versiones: 2.0, 3.0, 3.1, 4. Muy extendido.</td></tr>
+        <tr><td>FireWire (IEEE1394)</td><td>Alta velocidad (800 Mbps). Cámaras de vídeo y discos duros externos.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw" style="margin-top:.6rem"><table>
+      <thead><tr><th>Interfaz de almacenamiento</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>PATA (ATA/IDE)</td><td>Interfaz paralela antigua. Conector 40/80 pines. Para discos y ópticas. En desuso.</td></tr>
+        <tr><td>SATA</td><td>Interfaz serie. Sustituye a PATA. Mayor velocidad. Soporta modo AHCI. El estándar actual.</td></tr>
+        <tr><td>SCSI</td><td>Paralela de alto rendimiento. Para servidores y estaciones de trabajo.</td></tr>
+        <tr><td>SAS</td><td>Serial Attached SCSI. Versión serie de SCSI. Servidores de alta gama.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">3. Factor de Forma</p>
+    <div class="tw"><table>
+      <thead><tr><th>Formato</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>ATX</td><td>El más común en escritorio (305×244 mm). Intel 1995.</td></tr>
+        <tr><td>Micro ATX</td><td>Más pequeño (244×244 mm). Menos ranuras. Más económico.</td></tr>
+        <tr><td>Mini ITX</td><td>Muy compacto (170×170 mm). PCs de entretenimiento, mini PC.</td></tr>
+        <tr><td>Extended ATX (E-ATX)</td><td>Más grande (305×330 mm). Más ranuras. Alto rendimiento y servidores.</td></tr>
+        <tr><td>WTX</td><td>Estaciones de trabajo y servidores de alta gama. Múltiples CPUs.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="st h" style="margin-top:.9rem">Tipos de Caja (Chasis)</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Torre</td><td>La más grande. Máximo espacio y expansión. Múltiples unidades y ranuras.</td></tr>
+        <tr><td>Semitorre</td><td>Tamaño intermedio. 2-3 bahías. La más común en hogar y oficina.</td></tr>
+        <tr><td>SFF (Small Form Factor)</td><td>Muy compacta. Sin ranuras de expansión. Para espacios reducidos.</td></tr>
+        <tr><td>Rack</td><td>Para centros de datos. Se monta en bastidores apilados. Medida en U (1U = 44,45 mm).</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">4. Fuentes de Alimentación y Refrigeración</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Fuente conmutada</td><td>Convierte corriente de red en la que necesitan los componentes. Opera a alta frecuencia (50-200 kHz). Más pequeña, ligera y eficiente que las convencionales.</td></tr>
+        <tr><td>Factor forma ATX</td><td>150×86×140 mm. Hasta 1000 W. El más común.</td></tr>
+        <tr><td>Factor forma SFX</td><td>Más pequeño para cajas compactas. Hasta 450 W.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw" style="margin-top:.6rem"><table>
+      <thead><tr><th>Tipo de refrigeración</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Por aire (activa)</td><td>Ventiladores sobre disipadores de aluminio o cobre. Lo más común. Buena relación coste-eficacia.</td></tr>
+        <tr><td>Por líquido (activa)</td><td>Circuito cerrado con bomba y radiador. Más eficaz. Para alto rendimiento.</td></tr>
+        <tr><td>Termoeléctrica (Peltier)</td><td>Efecto Peltier para transferencia de calor. Muy efectiva pero costosa.</td></tr>
+        <tr><td>Pasiva</td><td>Sin partes móviles. Solo disipadores. Silenciosa pero limitada en alto rendimiento.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip">Pastas térmicas: silicona (común) · grafito (más efectiva) · metal líquido (la mejor, difícil de aplicar). Rellenan irregularidades entre disipador y CPU.</div>
+  </div>
+  <div class="sub">
+    <p class="st h">5. Placa Base (Motherboard)</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Socket</td><td>Zócalo para la CPU. Debe coincidir con el procesador. Ej: LGA 1700 (Intel), AM5 (AMD), TR5 (Threadripper).</td></tr>
+        <tr><td>Chipset</td><td>Circuitos puente entre CPU y el resto. Northbridge (CPU-RAM-GPU) + Southbridge (USB, SATA, audio). Ej: Intel Z790, AMD X670.</td></tr>
+        <tr><td>Slots de expansión</td><td>PCIe (x1, x4, x8, x16) para GPU, NVMe. PCI (legado). AGP (obsoleto).</td></tr>
+        <tr><td>BIOS/UEFI</td><td>Firmware que inicializa el hardware y carga el SO al encender.</td></tr>
+        <tr><td>Fabricantes</td><td>ASUS, MSI, Gigabyte, ASRock, Intel, Biostar.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">6. Microprocesador (CPU)</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Frecuencia de reloj</td><td>Velocidad en GHz. A mayor GHz, más operaciones/segundo.</td></tr>
+        <tr><td>Caché (L1/L2/L3)</td><td>Memoria rápida integrada. L1 más rápida/pequeña, L3 más lenta/grande. Reduce accesos a RAM.</td></tr>
+        <tr><td>Núcleos</td><td>Procesadores independientes dentro de un chip. Más núcleos = mejor multitarea.</td></tr>
+        <tr><td>TDP</td><td>Calor disipado máximo en W. Determina el refrigerador necesario.</td></tr>
+        <tr><td>Tipo escritorio</td><td>Alta velocidad, mayor consumo. Ej: Intel Core i9, AMD Ryzen 9.</td></tr>
+        <tr><td>Tipo servidor</td><td>Fiabilidad y rendimiento sostenido. Ej: Intel Xeon, AMD EPYC.</td></tr>
+        <tr><td>Tipo portátil</td><td>Bajo consumo y menor calor. Ej: Intel Core Ultra, AMD Ryzen Mobile.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">7. Memoria RAM</p>
+    <div class="tw"><table>
+      <thead><tr><th>Concepto</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>DRAM</td><td>RAM dinámica. Necesita refresco periódico. Tipo base de casi toda la RAM de consumo.</td></tr>
+        <tr><td>SDRAM</td><td>DRAM sincronizada con el reloj del sistema. Más rápida que DRAM.</td></tr>
+        <tr><td>DDR SDRAM</td><td>Double Data Rate. Transfiere datos 2 veces por ciclo. DDR4 y DDR5 son los estándares actuales.</td></tr>
+        <tr><td>DIMM / SODIMM</td><td>DIMM para escritorio. SODIMM para portátil (más pequeño). MicroDIMM para ultra compactos.</td></tr>
+        <tr><td>Multicanal</td><td>Doble/triple/cuádruple canal: módulos trabajando en paralelo para mayor ancho de banda.</td></tr>
+        <tr><td>Velocidad</td><td>En MHz o GB/s. Ej: DDR4-3200 = 3200 MHz.</td></tr>
+        <tr><td>CAS / RAS</td><td>Tiempos de acceso a columna y fila de la matriz de memoria. Menores = más rápida.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">8. Dispositivos de Almacenamiento y Tarjetas Gráficas</p>
+    <div class="tw"><table>
+      <thead><tr><th>Tipo</th><th>Características</th></tr></thead>
+      <tbody>
+        <tr><td>HDD (magnético)</td><td>Platos magnéticos giratorios. Gran capacidad, bajo coste. Más lento que SSD.</td></tr>
+        <tr><td>SSD (estado sólido)</td><td>Memoria flash. Mucho más rápido, menor consumo, más resistente (sin partes móviles). Más caro por GB.</td></tr>
+        <tr><td>NVMe (M.2)</td><td>SSD que usa PCIe directamente. El más rápido para almacenamiento de sistema.</td></tr>
+        <tr><td>Óptico (CD/DVD/Blu-ray)</td><td>Láser para leer/escribir. Lento, útil para distribución de contenido.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw" style="margin-top:.6rem"><table>
+      <tbody>
+        <tr><td>GPU integrada en placa</td><td>En la placa base. Sin coste extra, baja potencia. Para uso básico/oficina.</td></tr>
+        <tr><td>GPU integrada en CPU (iGPU)</td><td>Dentro del procesador. Mejor que la de placa. Memoria compartida. Ej: Intel HD/Iris, AMD Radeon Graphics.</td></tr>
+        <tr><td>GPU dedicada</td><td>Tarjeta en slot PCIe con memoria GDDR propia. Para juegos, CAD, render, IA.</td></tr>
+        <tr><td>SLI (NVIDIA) / Crossfire (AMD)</td><td>2+ GPUs en paralelo. Mayor potencia gráfica. Requiere bridge y GPUs idénticas.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">9. BIOS / UEFI y POST</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>BIOS</td><td>Firmware integrado en la placa. Primer programa al encender. Inicializa hardware, realiza POST y carga el SO.</td></tr>
+        <tr><td>UEFI</td><td>Reemplazo moderno de BIOS. Interfaz gráfica, Secure Boot, discos GPT &gt;2 TB, mayor velocidad de arranque.</td></tr>
+        <tr><td>Orden de arranque (BOOT)</td><td>Seleccionar desde qué dispositivo iniciar: HDD, SSD, USB, DVD. Teclas: F2/F10/DEL/ESC para entrar, F12 para menú rápido.</td></tr>
+        <tr><td>Modo AHCI</td><td>Mejor rendimiento SATA/SSD.</td></tr>
+        <tr><td>Overclocking</td><td>Aumentar frecuencia CPU/GPU/RAM por encima de specs. de fábrica. Más rendimiento, más calor, mayor consumo.</td></tr>
+        <tr><td>POST</td><td>Power On Self Test. Autodiagnóstico al encender el equipo. Verifica CPU, RAM, discos y tarjetas. Si hay error: pitidos o códigos. Si todo OK: carga el SO.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">10. Tarjetas de Red y Conectividad</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Ethernet (cableada)</td><td>Conector RJ-45. Velocidades: 100 Mbps, 1 Gbps, 10 Gbps. Estándar Cat5e, Cat6.</td></tr>
+        <tr><td>Wi-Fi (inalámbrica)</td><td>802.11n, 802.11ac, 802.11ax (Wi-Fi 6). Mayor movilidad.</td></tr>
+        <tr><td>Bluetooth</td><td>Corto alcance. Periféricos inalámbricos: ratón, teclado, auriculares.</td></tr>
+        <tr><td>Topologías de red</td><td>Estrella, bus, anillo y malla. Define cómo se conectan los dispositivos.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="hw02">
+  <div class="sec-hd"><span class="sn h">T2</span><div><h3>Instalación de Software de Utilidad y Propósito General</h3></div></div>
+  <div class="sub">
+    <p class="st h">1. Tipos de Software</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Software de sistema</td><td>Gestiona el hardware. Incluye SO (Windows, Linux, macOS), controladores y utilidades del sistema. Base sobre la que corre el resto.</td></tr>
+        <tr><td>Software de programación</td><td>Herramientas para crear software: IDEs (Eclipse, VS Code, IntelliJ), compiladores, depuradores, sistemas de versiones (Git, SVN).</td></tr>
+        <tr><td>Software de aplicación</td><td>Programas para tareas de usuario: Office, Photoshop, Chrome. Puede ser de pago o gratuito.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">2. Entornos Operativos</p>
+    <div class="tw"><table>
+      <thead><tr><th>SO</th><th>Características</th></tr></thead>
+      <tbody>
+        <tr><td>Windows</td><td>El más usado mundialmente. Gran compatibilidad con software. Versiones: 10, 11, Server 2022.</td></tr>
+        <tr><td>macOS</td><td>Sistema de Apple. Estable e integrado con ecosistema Apple.</td></tr>
+        <tr><td>Linux</td><td>Código abierto y gratuito. Seguro y estable. Muchas distros (Ubuntu, Debian, CentOS). Popular en servidores.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">Al instalar software, siempre verificar los requisitos del sistema (SO, versión, arquitectura) para garantizar compatibilidad óptima.</div>
+  </div>
+  <div class="sub">
+    <p class="st h">3. Software de Propósito General — Categorías</p>
+    <div class="tw"><table>
+      <thead><tr><th>Categoría</th><th>Ejemplos</th></tr></thead>
+      <tbody>
+        <tr><td>Ofimática</td><td>Procesador de textos (Word, LibreOffice Writer), hojas de cálculo (Excel, Calc), presentaciones (PowerPoint, Impress), correo (Outlook).</td></tr>
+        <tr><td>Imagen y multimedia</td><td>Edición imagen: Photoshop, GIMP. Audio: Audacity. Vídeo: Premiere, DaVinci Resolve. Diseño: Illustrator, Inkscape.</td></tr>
+        <tr><td>Programación</td><td>IDEs: Eclipse, VS Code, IntelliJ. Editores: Sublime Text. Control versiones: Git.</td></tr>
+        <tr><td>Productividad y negocios</td><td>Gestión proyectos: Asana, Trello. CRM: Salesforce. Contabilidad: QuickBooks. Colaboración: Slack, Teams.</td></tr>
+        <tr><td>IA y emergentes</td><td>IA: chatbots, análisis predictivo. RV/RA: juegos, formación. ERP: SAP, Oracle. Big Data: Tableau, Power BI.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">4. Utilidades del Sistema</p>
+    <div class="tw"><table>
+      <thead><tr><th>Categoría</th><th>Herramientas</th></tr></thead>
+      <tbody>
+        <tr><td>Compresores</td><td>ZIP, RAR, 7-Zip, Gzip, Bzip2. Reducen tamaño para almacenamiento y transferencia.</td></tr>
+        <tr><td>Monitorización y optimización</td><td>CCleaner, Advanced SystemCare, Process Explorer, CrystalDiskInfo, SpeedFan.</td></tr>
+        <tr><td>Recuperación de datos</td><td>Recuva, Stellar Phoenix. Recuperan archivos borrados o perdidos.</td></tr>
+        <tr><td>Gestión de discos</td><td>GParted, MiniTool Partition Wizard, EaseUS Partition Master.</td></tr>
+        <tr><td>Seguridad</td><td>Copias de seguridad (Acronis). Encriptación (VeraCrypt, BitLocker). Gestores de contraseñas (LastPass).</td></tr>
+        <tr><td>Antivirus y firewall</td><td>Norton, McAfee, Kaspersky, Avast. Antiespías: Malwarebytes. Firewall: Windows Firewall, ZoneAlarm.</td></tr>
+        <tr><td>Virtualización</td><td>VMware, VirtualBox, Hyper-V. Crean múltiples SO en una sola máquina física.</td></tr>
+        <tr><td>Benchmarks</td><td>AIDA64, PCMark, Cinebench, Geekbench. Miden rendimiento de CPU, GPU, RAM, disco.</td></tr>
+        <tr><td>Control remoto</td><td>TeamViewer, AnyDesk, VNC, Remote Desktop (RDP). Acceso y control remoto.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="hw03">
+  <div class="sec-hd"><span class="sn h">T3</span><div><h3>Creación de Imágenes de Software. Respaldo del Sistema</h3></div></div>
+  <div class="sub">
+    <p class="st h">1. Particionado de Discos</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Partición</td><td>División del espacio de un disco en secciones separadas físicamente. Permite tener varios SO, separar datos del sistema, o mejorar la eficiencia y seguridad del almacenamiento.</td></tr>
+        <tr><td>Redimensionamiento</td><td>Ajustar el tamaño de particiones existentes con herramientas como GParted, MiniTool Partition Wizard o EaseUS Partition Master.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">SIEMPRE hacer copia de seguridad completa ANTES de particionar o redimensionar. Cualquier error puede provocar pérdida total de datos.</div>
+  </div>
+  <div class="sub">
+    <p class="st h">2. Imágenes de Respaldo</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Imagen de respaldo</td><td>Copia exacta de un sistema, programa o disco completo. Incluye SO, configuraciones, programas y datos. Permite restaurar ante fallos de hardware, virus o errores del usuario.</td></tr>
+        <tr><td>Almacenamiento local</td><td>Disco duro interno, externo USB, unidad flash USB, CD/DVD. Acceso rápido. Riesgo si falla el hardware.</td></tr>
+        <tr><td>Almacenamiento en red</td><td>Servidor NAS, servidor de archivos, nube. Accesible desde cualquier equipo de la red. Más seguro.</td></tr>
+        <tr><td>Clonación de equipos</td><td>Usar imágenes para desplegar el mismo SO en múltiples equipos sin instalar manualmente.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tip">Herramientas: Acronis True Image · Clonezilla · Macrium Reflect · Veeam</div>
+    <div class="warn">Las imágenes de respaldo no capturan datos nuevos tras su creación. Actualizar regularmente para no perder cambios recientes.</div>
+  </div>
+  <div class="sub">
+    <p class="st h">3. Migración de Sistemas Operativos con Imágenes</p>
+    <div class="tw"><table>
+      <thead><tr><th>Tipo de migración</th><th>Descripción y uso</th></tr></thead>
+      <tbody>
+        <tr><td>P2P (Físico a Físico)</td><td>Mover SO de un hardware antiguo a uno nuevo. Crear imagen, transferir, instalar nuevos controladores.</td></tr>
+        <tr><td>P2V (Físico a Virtual)</td><td>Convertir sistema físico en máquina virtual. Útil para consolidar servidores. Herramienta: VMware vCenter Converter.</td></tr>
+        <tr><td>V2P (Virtual a Físico)</td><td>Migrar VM a hardware dedicado. Para cuando se necesita rendimiento sin capa de virtualización.</td></tr>
+        <tr><td>V2V (Virtual a Virtual)</td><td>Mover VM entre plataformas (VMware, Hyper-V, VirtualBox). Convertir formato de imagen.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">4. Opciones de Arranque y Recuperación del Sistema</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Modo seguro</td><td>Inicia con mínimo de controladores. Para solucionar problemas de software o hardware.</td></tr>
+        <tr><td>Última configuración buena</td><td>Inicia con la última configuración que funcionó correctamente.</td></tr>
+        <tr><td>Diagnóstico del sistema</td><td>Herramientas avanzadas para diagnóstico de hardware y software.</td></tr>
+        <tr><td>Selección de SO</td><td>Si hay varios SO instalados (multiboot), permite elegir cuál iniciar.</td></tr>
+        <tr><td>Restablecimiento de fábrica</td><td>Borra todo y devuelve el equipo al estado original de fábrica.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="warn">La restauración puede eliminar datos actuales. Antes de restaurar, hacer copia de los datos más recientes si es posible.</div>
+  </div>
+</div>
+
+<div class="sec" id="hw04">
+  <div class="sec-hd"><span class="sn h">T4</span><div><h3>Implantación de Hardware en Centros de Proceso de Datos (CPD)</h3></div></div>
+  <div class="sub">
+    <p class="st h">1. Arquitecturas de Ordenadores y Estructura del CPD</p>
+    <div class="tw"><table>
+      <thead><tr><th>Tipo</th><th>Características</th></tr></thead>
+      <tbody>
+        <tr><td>Ordenadores personales (PC)</td><td>Un microprocesador central. Periféricos estándar. Comunicación por buses internos de alta velocidad.</td></tr>
+        <tr><td>Sistemas departamentales</td><td>Servidores de red + almacenamiento NAS. Acceso simultáneo de múltiples usuarios.</td></tr>
+        <tr><td>Mainframes</td><td>Múltiples procesadores masivos. Alta disponibilidad. Para aplicaciones críticas empresariales y gubernamentales (banca, estadística).</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw" style="margin-top:.6rem"><table>
+      <tbody>
+        <tr><td>CPD</td><td>Espacio físico diseñado para alojar servidores, almacenamiento y equipos de red. Fundamental para la continuidad del negocio.</td></tr>
+        <tr><td>Área de servidores</td><td>Alojan los servidores y sistemas de cómputo. Requiere ventilación y refrigeración adecuadas.</td></tr>
+        <tr><td>Área de almacenamiento</td><td>Dispositivos HDD, SSD, NAS, cintas. Condiciones óptimas de temperatura y humedad.</td></tr>
+        <tr><td>Área de red</td><td>Switches, routers, firewalls. Garantiza disponibilidad, seguridad y velocidad de red.</td></tr>
+        <tr><td>Área de administración</td><td>Consolas de monitorización. Donde trabajan los administradores de sistemas.</td></tr>
+        <tr><td>Área de suministro eléctrico</td><td>Generadores, transformadores, SAIs/baterías. Garantiza continuidad eléctrica ante cortes.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">2. Seguridad en el CPD y Bastidores (Racks)</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Seguridad física</td><td>Control de acceso: tarjetas, biometría, cámaras de vigilancia. Armarios cerrados. Solo personal autorizado en áreas críticas.</td></tr>
+        <tr><td>Seguridad lógica</td><td>Autenticación (2FA), cifrado de datos, sistemas IDS/IPS, cortafuegos, antivirus, backup y recuperación.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw" style="margin-top:.6rem"><table>
+      <tbody>
+        <tr><td>Rack</td><td>Estructura metálica para alojar servidores, almacenamiento y dispositivos de red en el CPD. Facilita la gestión eficiente del espacio.</td></tr>
+        <tr><td>Tamaño estándar</td><td>19 pulgadas de ancho. El más común en la industria.</td></tr>
+        <tr><td>Altura (U)</td><td>1U = 44,45 mm. Racks típicos: 42U o 48U.</td></tr>
+        <tr><td>Profundidad</td><td>600-1200 mm según equipos a alojar.</td></tr>
+        <tr><td>Ventilación</td><td>Ventiladores, agua o aire acondicionado. Clave para evitar sobrecalentamiento.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">3. Sistemas RAID</p>
+    <div class="tw"><table>
+      <thead><tr><th>Nivel RAID</th><th>Descripción y características</th></tr></thead>
+      <tbody>
+        <tr><td>RAID 0 (striping)</td><td>Divide datos entre discos. Máximo rendimiento. SIN redundancia. Si falla un disco se pierden TODOS los datos.</td></tr>
+        <tr><td>RAID 1 (mirroring)</td><td>Copia exacta en 2 discos. Redundancia total. Sin mejora de rendimiento. Si falla uno, el otro continúa.</td></tr>
+        <tr><td>RAID 5</td><td>≥3 discos. Paridad distribuida. Buen equilibrio rendimiento/redundancia. Soporta fallo de 1 disco.</td></tr>
+        <tr><td>RAID 6</td><td>≥4 discos. Doble paridad. Soporta fallo de 2 discos. Más seguro que RAID 5.</td></tr>
+        <tr><td>RAID 10 (1+0)</td><td>Combina RAID 1 y RAID 0. Redundancia total + alto rendimiento. Mínimo 4 discos.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">4. Componentes Empresariales Clave</p>
+    <div class="tw"><table>
+      <tbody>
+        <tr><td>Hot-swap</td><td>Sustitución de componentes (discos, fuentes, ventiladores) sin apagar el sistema. Mayor disponibilidad, menor tiempo de inactividad.</td></tr>
+        <tr><td>Fuentes redundantes</td><td>Garantizan continuidad eléctrica. Config. activa/activa (comparten carga) o activa/pasiva (una en espera).</td></tr>
+        <tr><td>KVM</td><td>Consola Teclado-Vídeo-Ratón. Acceso y control directo de servidores desde ubicación remota.</td></tr>
+        <tr><td>NMS</td><td>Network Management System. Monitorización en tiempo real de todos los dispositivos de la red.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">5. Herramientas de Inventariado y Gestión del Hardware</p>
+    <div class="tw"><table>
+      <thead><tr><th>Herramienta</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Spiceworks</td><td>Herramienta gratuita. Escanea la red y recopila info de todos los dispositivos.</td></tr>
+        <tr><td>Lansweeper</td><td>Inventario + gestión de activos + seguimiento de cambios + automatización.</td></tr>
+        <tr><td>OCS Inventory NG</td><td>Open source. Escaneo automático. Informes detallados.</td></tr>
+        <tr><td>SolarWinds Web Help Desk</td><td>Gestión de activos + ciclo de vida + programación de sustituciones.</td></tr>
+        <tr><td>IBM Maximo</td><td>Plataforma enterprise para gestión completa del ciclo de vida de activos.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="sub">
+    <p class="st h">6. Prevención de Riesgos Laborales en el CPD</p>
+    <div class="tw"><table>
+      <thead><tr><th>Tipo de riesgo</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Riesgos de seguridad</td><td>Caídas, cortes, quemaduras, lesiones por esfuerzo repetitivo.</td></tr>
+        <tr><td>Riesgos eléctricos</td><td>Contacto con corrientes, cortocircuitos, sobrecargas.</td></tr>
+        <tr><td>Riesgos medioambientales</td><td>Contaminación por residuos electrónicos (RAEE), eliminación inadecuada.</td></tr>
+        <tr><td>Riesgos ergonómicos</td><td>Movimientos repetitivos, posturas forzadas — lesiones musculoesqueléticas.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tw" style="margin-top:.6rem"><table>
+      <thead><tr><th>Normativa</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Ley 31/1995 (LPRL)</td><td>Ley de Prevención de Riesgos Laborales. Base normativa de la PRL en España.</td></tr>
+        <tr><td>RD 39/1997</td><td>Reglamento de los Servicios de Prevención.</td></tr>
+        <tr><td>RD 486/1997</td><td>Disposiciones mínimas de seguridad y salud en lugares de trabajo.</td></tr>
+        <tr><td>Ley 22/2011</td><td>Residuos y suelos contaminados. Gestión de RAEE (residuos electrónicos).</td></tr>
+        <tr><td>Directiva 2012/19/UE</td><td>Marco europeo para gestión de RAEE en la Unión Europea.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<div class="sec" id="hwgl">
+  <div class="sec-hd"><span class="sn h">GL</span><div><h3>Glosario — Fundamentos de Hardware</h3></div></div>
+  <div class="gl">
+    <div class="gi"><div class="gt h">AHCI</div><div class="gd">Modo avanzado de la controladora SATA. Mejora rendimiento y soporte de hot-swap.</div></div>
+    <div class="gi"><div class="gt h">ALU</div><div class="gd">Unidad Aritmético-Lógica. Realiza operaciones matemáticas y lógicas en la CPU.</div></div>
+    <div class="gi"><div class="gt h">BIOS</div><div class="gd">Firmware que inicializa el hardware y carga el SO al encender el equipo.</div></div>
+    <div class="gi"><div class="gt h">Bus</div><div class="gd">Conjunto de líneas que transfieren datos entre CPU, memoria y periféricos.</div></div>
+    <div class="gi"><div class="gt h">Caché</div><div class="gd">Memoria rápida integrada en la CPU (L1, L2, L3) para acceso rápido a datos frecuentes.</div></div>
+    <div class="gi"><div class="gt h">Chipset</div><div class="gd">Circuitos que coordinan la comunicación entre CPU, RAM y periféricos de la placa.</div></div>
+    <div class="gi"><div class="gt h">CPD</div><div class="gd">Centro de Proceso de Datos. Instalación con servidores, almacenamiento y redes.</div></div>
+    <div class="gi"><div class="gt h">DDR</div><div class="gd">Double Data Rate. Tipo de RAM que transfiere datos dos veces por ciclo de reloj.</div></div>
+    <div class="gi"><div class="gt h">Factor de forma</div><div class="gd">Especificación física (tamaño, diseño) de un componente hardware.</div></div>
+    <div class="gi"><div class="gt h">GPU</div><div class="gd">Unidad de Procesamiento Gráfico. Procesa y renderiza gráficos.</div></div>
+    <div class="gi"><div class="gt h">HDD</div><div class="gd">Disco duro magnético con platos giratorios. Alta capacidad, menor velocidad que SSD.</div></div>
+    <div class="gi"><div class="gt h">Hot-swap</div><div class="gd">Conexión o desconexión de dispositivos sin apagar el sistema.</div></div>
+    <div class="gi"><div class="gt h">Imagen de respaldo</div><div class="gd">Copia exacta de un sistema para restauración ante fallos.</div></div>
+    <div class="gi"><div class="gt h">Mainframe</div><div class="gd">Gran ordenador para procesar masivos volúmenes de datos en empresas y gobiernos.</div></div>
+    <div class="gi"><div class="gt h">NAS</div><div class="gd">Network Attached Storage. Almacenamiento accesible desde la red.</div></div>
+    <div class="gi"><div class="gt h">Overclocking</div><div class="gd">Aumentar frecuencia de CPU/GPU/RAM por encima de especificaciones de fábrica.</div></div>
+    <div class="gi"><div class="gt h">P2V</div><div class="gd">Physical to Virtual. Migrar un sistema físico a una máquina virtual.</div></div>
+    <div class="gi"><div class="gt h">PCIe</div><div class="gd">PCI Express. Bus de alta velocidad para tarjetas de expansión (GPU, NVMe).</div></div>
+    <div class="gi"><div class="gt h">POST</div><div class="gd">Power On Self Test. Autodiagnóstico al encender el equipo.</div></div>
+    <div class="gi"><div class="gt h">RAID</div><div class="gd">Redundant Array of Independent Disks. Redundancia y/o rendimiento en almacenamiento.</div></div>
+    <div class="gi"><div class="gt h">RAM</div><div class="gd">Random Access Memory. Memoria volátil de trabajo del sistema.</div></div>
+    <div class="gi"><div class="gt h">RAEE</div><div class="gd">Residuos de Aparatos Eléctricos y Electrónicos. Marco: Directiva 2012/19/UE.</div></div>
+    <div class="gi"><div class="gt h">SATA</div><div class="gd">Serial ATA. Interfaz para conectar discos duros y SSDs a la placa base.</div></div>
+    <div class="gi"><div class="gt h">Socket</div><div class="gd">Zócalo en la placa base donde se instala físicamente la CPU.</div></div>
+    <div class="gi"><div class="gt h">SSD</div><div class="gd">Solid State Drive. Almacenamiento en memoria flash. Más rápido que HDD.</div></div>
+    <div class="gi"><div class="gt h">UEFI</div><div class="gd">Sustituto moderno del BIOS. Interfaz gráfica, Secure Boot, mayor capacidad.</div></div>
+    <div class="gi"><div class="gt h">Von Neumann</div><div class="gd">Arquitectura base de ordenadores modernos: CPU + Memoria + E/S + Bus compartido.</div></div>
+  </div>
+</div>
+</div><!-- /pg-hw -->
+
+</main>
+
+<script src="./src/scripts/main.js"></script>
+</body>
+</html>
